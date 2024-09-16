@@ -7,7 +7,7 @@ const NavBar = () => {
         <nav className="max-w-[85rem] w-full mx-auto px-4 flex flex-wrap basis-full items-center justify-between">
           <a
             className="sm:order-1 flex-none text-xl font-semibold focus:outline-none focus:opacity-80"
-            href="#"
+            href="/"
           >
             <img src="/logonav.png" className="-mt-0 "/>
           </a>

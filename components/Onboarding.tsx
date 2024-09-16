@@ -19,7 +19,7 @@ const Onboarding = () => {
             <h1 className="text-2xl font-bold tracking-tight text-gray-900">
               Let's get to know you 
             </h1>
-            <TabsList className="flex space-x-2">
+            <TabsList className="flex  gap-5 space-x-2">
               <TabsTrigger
                 value="candidate"
                 className={`px-4 py-2 rounded-md transition-colors ${
