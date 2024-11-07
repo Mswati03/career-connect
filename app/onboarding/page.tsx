@@ -1,5 +1,5 @@
 import Onboarding from "@/components/Onboarding";
 
-export default function () {
+export default function Page () {
   return <Onboarding />;
 }

@@ -17,7 +17,7 @@ const Onboarding = () => {
       <div className="space-y-12">
           <div className="flex items-baseline justify-center border-b gap-20 ">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900">
-              Let's get to know you 
+              Let us get to know you 
             </h1>
             <TabsList className="flex space-x-2">
               <TabsTrigger

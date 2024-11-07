@@ -259,7 +259,7 @@ export default function CandidateSignupForm() {
             Job Preferences
           </h2>
           <p className="mt-1 text-sm leading-6 text-gray-600">
-            Tell us about the type of job you're looking for.
+            Tell us about the type of job you are looking for.
           </p>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
