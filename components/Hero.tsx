@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 const Hero = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
 
 
   return (
