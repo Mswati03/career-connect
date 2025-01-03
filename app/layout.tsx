@@ -1,17 +1,11 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Metadata } from "next";
+import { Inter } from "next/font/google"; // Importing Inter from the Google package
 import "./globals.css";
 import NavBar from "@/components/Navbar";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const inter = Inter({
+  subsets: ["latin"], // Specify subsets as needed
+  variable: "--font-inter", // Define a CSS variable for the font
 });
 
 export const metadata: Metadata = {
@@ -21,14 +15,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      ><NavBar/>
+      <body className={`${inter.variable} antialiased`}>
+        <NavBar />
         {children}
       </body>
     </html>

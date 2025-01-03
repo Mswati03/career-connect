@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className="relative">
       <section>
-        <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 overflow-hidden md:px-8 md:flex">
+        <div className="max-w-screen-xl mx-auto px-4 py-28 max-sm:py-10 gap-12 text-gray-600 overflow-hidden md:px-8 md:flex">
           <div className="flex-none space-y-5 max-w-xl">
             <a
               href="#"
@@ -34,7 +34,7 @@ const Hero = () => {
             </a>
             <h1 className="text-4xl text-gray-800 font-extrabold sm:text-5xl">
               Discover more than{" "}
-              <span className="text-blue-700">50+ Jobs in Lesotho</span>
+              <span className="text-blue-700">100+ Jobs in Lesotho</span>
             </h1>
             <p className="text-lg text-gray-600">
               Great platform for the job seeker looking to advance their career
