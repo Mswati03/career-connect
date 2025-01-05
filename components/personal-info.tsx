@@ -38,7 +38,7 @@ export default function PersonalInfo({
 
   const validateForm = () => {
     let isValid = true
-    let newErrors = {
+    const  newErrors = {
       fullName: '',
       email: '',
       phone: '',

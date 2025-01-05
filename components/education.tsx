@@ -35,7 +35,7 @@ export default function Education({
 
   const validateForm = () => {
     let isValid = true
-    let newErrors = {
+    const newErrors = {
       institution: '',
       degree: '',
       graduationYear: ''
@@ -82,21 +82,23 @@ export default function Education({
         {errors.institution && <p className="text-red-500 text-sm mt-1">{errors.institution}</p>}
       </div>
       <div>
-        <Label htmlFor="degree">Degree</Label>
+        <Label htmlFor="degree">Qualification</Label>
         <Select onValueChange={handleSelectChange} value={formFields.degree}>
           <SelectTrigger>
             <SelectValue placeholder="Select degree" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="bachelor">Bachelor's</SelectItem>
-            <SelectItem value="master">Master's</SelectItem>
+          <SelectItem value="lgcse">LGCSE</SelectItem>
+          <SelectItem value="diploma">Diploma</SelectItem>
+            <SelectItem value="bachelor">Bachelors</SelectItem>
+            <SelectItem value="master">Masters</SelectItem>
             <SelectItem value="phd">Ph.D.</SelectItem>
           </SelectContent>
         </Select>
         {errors.degree && <p className="text-red-500 text-sm mt-1">{errors.degree}</p>}
       </div>
       <div>
-        <Label htmlFor="graduationYear">Graduation Year</Label>
+        <Label htmlFor="graduationYear">Completion year</Label>
         <Input 
           id="graduationYear" 
           name="graduationYear" 

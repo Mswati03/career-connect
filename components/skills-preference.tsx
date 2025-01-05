@@ -37,7 +37,7 @@ export default function SkillsPreferences({
 
   const validateForm = () => {
     let isValid = true
-    let newErrors = {
+    const newErrors = {
       skills: '',
       desiredPosition: '',
       expectedSalary: ''

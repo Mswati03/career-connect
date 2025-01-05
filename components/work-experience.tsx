@@ -32,7 +32,7 @@ export default function WorkExperience({
 
   const validateForm = () => {
     let isValid = true
-    let newErrors = {
+    const newErrors = {
       company: '',
       jobTitle: '',
       duration: '',
