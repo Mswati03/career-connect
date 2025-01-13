@@ -20,7 +20,7 @@ import { registerUser } from '../actions/register'
 export default function RegisterPage() {
   
 const steps = ['Personal Info', 'Education', 'Work Experience', 'Skills & Preferences']
-const [state, formAction] = useFormState((_state: FormState, payload: any) => registerUser(payload), { success: false, message: '' })
+const [state, formAction] = useFormState((_state: FormState, payload: Record<string, unknown>) => registerUser(payload), { success: false, message: '' })
   const [currentStep, setCurrentStep] = useState(0)
   const [formData, setFormData] = useState({
     personalInfo: {},
@@ -43,11 +43,11 @@ const [state, formAction] = useFormState((_state: FormState, payload: any) => re
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  {/*const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     // Here you would typically send the formData to your backend
     console.log('Form submitted:', formData)
-  }
+  }*/}
 
   const updateFormData = (stepName: string, data: object) => {
     setFormData({ ...formData, [stepName]: data })
