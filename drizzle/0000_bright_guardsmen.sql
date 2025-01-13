@@ -1,0 +1,21 @@
+CREATE TABLE "users" (
+	"id" serial PRIMARY KEY NOT NULL,
+	"full_name" text NOT NULL,
+	"email" text NOT NULL,
+	"phone" text NOT NULL,
+	"resume_url" text,
+	"institution" text NOT NULL,
+	"degree" text NOT NULL,
+	"graduation_year" integer NOT NULL,
+	"company" text NOT NULL,
+	"job_title" text NOT NULL,
+	"duration" text NOT NULL,
+	"responsibilities" text NOT NULL,
+	"skills" text NOT NULL,
+	"desired_position" text NOT NULL,
+	"expected_salary" integer NOT NULL,
+	"remote_work" boolean NOT NULL,
+	"relocation" boolean NOT NULL,
+	"created_at" timestamp DEFAULT now() NOT NULL,
+	CONSTRAINT "users_email_unique" UNIQUE("email")
+);

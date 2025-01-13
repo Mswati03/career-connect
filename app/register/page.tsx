@@ -7,11 +7,20 @@ import Education from '@/components/education'
 import PersonalInfo from '@/components/personal-info'
 import SkillsPreferences from '@/components/skills-preference'
 import WorkExperience from '@/components/work-experience'
+import { useFormState } from 'react-dom'
+
+interface FormState {
+  success: boolean;
+  message: string;
+}
+import { registerUser } from '../actions/register'
 
 
-const steps = ['Personal Info', 'Education', 'Work Experience', 'Skills & Preferences']
 
 export default function RegisterPage() {
+  
+const steps = ['Personal Info', 'Education', 'Work Experience', 'Skills & Preferences']
+const [state, formAction] = useFormState((_state: FormState, payload: any) => registerUser(payload), { success: false, message: '' })
   const [currentStep, setCurrentStep] = useState(0)
   const [formData, setFormData] = useState({
     personalInfo: {},
@@ -86,7 +95,7 @@ export default function RegisterPage() {
               ></div>
             </div>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={formAction}>
             {renderStep()}
             <div className="flex justify-between mt-6">
               <Button 
@@ -104,6 +113,11 @@ export default function RegisterPage() {
               )}
             </div>
           </form>
+          {state.message && (
+            <div className={`mt-4 p-2 ${state.success ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'} rounded`}>
+              {state.message}
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>
