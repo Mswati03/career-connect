@@ -20,7 +20,13 @@ import { registerUser } from '../actions/register'
 export default function RegisterPage() {
   
 const steps = ['Personal Info', 'Education', 'Work Experience', 'Skills & Preferences']
-const [state, formAction] = useFormState((_state: FormState, payload: Record<string, unknown>) => registerUser(payload), { success: false, message: '' })
+const [state, formAction] = useFormState((_state: FormState, payload: Record<string, unknown>) => {
+  const formData = new FormData();
+  Object.entries(payload).forEach(([key, value]) => {
+    formData.append(key, value as string);
+  });
+  return registerUser(formData);
+}, { success: false, message: '' })
   const [currentStep, setCurrentStep] = useState(0)
   const [formData, setFormData] = useState({
     personalInfo: {},
@@ -95,7 +101,7 @@ const [state, formAction] = useFormState((_state: FormState, payload: Record<str
               ></div>
             </div>
           </div>
-          <form onSubmit={formAction}>
+          <form onSubmit={(e) => { e.preventDefault(); formAction(formData); }}>
             {renderStep()}
             <div className="flex justify-between mt-6">
               <Button 
